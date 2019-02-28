@@ -1,7 +1,7 @@
 ## About
-A completely impractical web app that makes colorful GIFs made as a fun foray into very basic image processing.
+A completely impractical web app that makes colorful GIFs. Made as a fun foray into very basic image processing.
 
-To get GIF, first run the app locally:
+To get GIFs, first run the app locally:
 
 ```
 pip install -r requirements.txt
