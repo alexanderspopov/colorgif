@@ -1,5 +1,5 @@
 ## About
-A completely impractical web app that makes colorful GIFs.
+A completely impractical web app that makes colorful GIFs made as a fun foray into very basic image processing.
 
 To get GIF, first run the app locally:
 
