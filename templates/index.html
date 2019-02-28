@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Make me a GIF</title>
+    <link rel="stylesheet" type="text/css" href="static/basic.css">
+    <script type="application/javascript" src="static/basic.js"></script>
+  </head>
+  <body>
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+    <div class="errors">
+      <p>Errors:</p>
+      <ul>
+      {% for msg in errors %}
+        <li>{{ msg }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    <form action="gifme" onsubmit="return onSubmit()" method="get">
+      <div>
+        <label for="width">Width:</label>
+        <input type="text" id="width" name="width" placeholder="{{ width }}"></input>
+      </div>
+      <div>
+        <label for="width">Height:</label>
+        <input type="text" id="height" name="height" placeholder="{{ height }}"></input>
+      </div>
+      <div>
+        <label for="pixel_size">Pixel size:</label>
+        <input type="text" id="pixel_size" name="pixel_size" placeholder="{{ pixel_size }}"></input>
+      </div>
+      <div>
+        <label for="frames">Frames:</label>
+        <input type="text" id="frames" name="frames" placeholder="{{ frames }}"></input>
+      </div>
+      <div>
+        <label for="mood">Mood:</label>
+        <select id="mood" name="mood">
+				  {% for mood in moods %}	
+            <option value="{{ mood.value }}">{{ mood.value }}</option>
+          {% endfor %}
+				</select>
+      </div>
+      <div class="button">
+        <button type="submit">GIF me!</button>
+      </div>
+    </form>
+  </body>
+</html>
